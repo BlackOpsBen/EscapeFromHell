@@ -6,6 +6,6 @@ public class JumpCardFunction : MonoBehaviour, ICardFunction
 {
     public void UseCardFunction()
     {
-        Debug.Log("Jump behavior triggered!");
+        PlayerManager.Instance.Jump();
     }
 }

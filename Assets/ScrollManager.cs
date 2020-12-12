@@ -67,7 +67,7 @@ public class ScrollManager : MonoBehaviour
     private void QueueNextPiece()
     {
         GameObject nextPiece = GetRandomPiece();
-        nextPiece.transform.position = transform.position;
+        nextPiece.transform.position = new Vector3(piecesInPlay[piecesInPlay.Count - 1].transform.position.x + pieceWidth, transform.position.y, 0f);
         nextPiece.transform.parent = transform;
         piecesInPlay.Add(nextPiece);
     }
@@ -114,7 +114,6 @@ public class ScrollManager : MonoBehaviour
             }
             myIndex++;
             myIndex = myIndex % maxPoolSize;
-            Debug.Log("Index: " + myIndex.ToString());
 
             return pieceToReturn;
         }
