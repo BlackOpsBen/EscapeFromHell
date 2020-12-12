@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 133676279}
   - component: {fileID: 133676283}
   - component: {fileID: 133676282}
+  - component: {fileID: 133676285}
+  - component: {fileID: 133676284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -255,12 +257,37 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 5
+--- !u!114 &133676284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133676278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5dec1cf0f5dd5949916217607661dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &133676285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133676278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15f418244d24de40b30daae28cb9b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpMultiplier: 10
 --- !u!1 &247372711
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +747,7 @@ GameObject:
   - component: {fileID: 1686362337}
   - component: {fileID: 1686362338}
   m_Layer: 0
-  m_Name: ScrollingTerrain
+  m_Name: ScrollingTerrainFG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,9 +779,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e77d39194d62849b02d23b849bf9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usesCapFlags: 0
   modularPieces:
   - {fileID: 4800467214266566193, guid: e7a38bf7160886641b950b29c49f8e5b, type: 3}
   - {fileID: 1710790661348890744, guid: 3c9f8c6b1a99bae46b65326200e25bb3, type: 3}
+--- !u!1 &1793580121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793580123}
+  - component: {fileID: 1793580122}
+  m_Layer: 0
+  m_Name: ScrollingTerrainBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1793580122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793580121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e77d39194d62849b02d23b849bf9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usesCapFlags: 1
+  modularPieces:
+  - {fileID: 2963577451049883656, guid: af06684bbd303674cbd83ef5fc454939, type: 3}
+  - {fileID: 3984769964831037043, guid: 2196481badf97ca4f9a0364386c1fffc, type: 3}
+  - {fileID: 1616090802042564320, guid: a20b2707ed03e3c41a66d8da4547d0af, type: 3}
+  - {fileID: 978863872872688114, guid: b984a22256cfe32428893ff4d48fb26f, type: 3}
+  - {fileID: 1770492774201547701, guid: 8b01a74711cc8e944a10aa1894c68f4c, type: 3}
+--- !u!4 &1793580123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793580121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937908990
 GameObject:
   m_ObjectHideFlags: 0

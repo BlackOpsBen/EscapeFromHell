@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScrollManager : MonoBehaviour
 {
+    [SerializeField] bool usesCapFlags;
     public static float speed = 6f;
     public static int screenGridWidth = 21;
     public static int pieceWidth = 3;
@@ -74,32 +75,71 @@ public class ScrollManager : MonoBehaviour
 
     private GameObject GetRandomPiece()
     {
-        int rand = UnityEngine.Random.Range(0, modularPieces.Count);
-        GameObject randomPiece = piecePools[rand].GetNextPiece();
+        List<PiecePool> validPools;
+
+        if (usesCapFlags)
+        {
+            validPools = GetValidPools();            
+        }
+        else
+        {
+            validPools = piecePools;
+        }
+
+        int rand = UnityEngine.Random.Range(0, validPools.Count);
+        GameObject randomPiece = validPools[rand].GetNextPiece();
         return randomPiece;
+    }
+
+    private List<PiecePool> GetValidPools()
+    {
+        List<PiecePool> listToReturn = new List<PiecePool>();
+
+        if (piecesInPlay[piecesInPlay.Count-1].GetComponent<ModularCapFlags>().isEmpty)
+        {
+            for (int i = 0; i < piecePools.Count; i++)
+            {
+                if (piecePools[i].prefab.GetComponent<ModularCapFlags>().leftCap || piecePools[i].prefab.GetComponent<ModularCapFlags>().isEmpty)
+                {
+                    listToReturn.Add(piecePools[i]);
+                }
+            }
+        }
+        else if (piecesInPlay[piecesInPlay.Count-1].GetComponent<ModularCapFlags>().rightCap)
+        {
+            for (int i = 0; i < piecePools.Count; i++)
+            {
+                if (piecePools[i].prefab.GetComponent<ModularCapFlags>().isEmpty)
+                {
+                    listToReturn.Add(piecePools[i]);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < piecePools.Count; i++)
+            {
+                if (piecePools[i].prefab.GetComponent<ModularCapFlags>().leftCap == false && piecePools[i].prefab.GetComponent<ModularCapFlags>().isEmpty == false)
+                {
+                    listToReturn.Add(piecePools[i]);
+                }
+            }
+        }
+
+        return listToReturn;
     }
 
     public class PiecePool
     {
         private int maxPoolSize = 7;
         private int myIndex = 0;
-        private GameObject prefab;
+        public GameObject prefab { get; private set; }
         List<GameObject> pieces = new List<GameObject>();
 
         public PiecePool(GameObject prefabObject)
         {
             prefab = prefabObject;
         }
-
-        /*public int GetCurrentIndex() // TODO delete if not needed
-        {
-            return index;
-        }*/
-
-        /*public int GetCount() // TODO delete if not needed
-        {
-            return pieces.Count;
-        }*/
 
         public GameObject GetNextPiece()
         {
