@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,35 +9,53 @@ public class GameManager : MonoBehaviour
 
     public int state;
 
+    private bool alreadyPlayed = false;
+
     private void Awake()
     {
         if (Instance != null)
         {
-            Destroy(gameObject);
+            alreadyPlayed = Instance.alreadyPlayed;
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Instance = this;
-        }
+        
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public float speed { get; private set; } = 2.0f;
 
     void Start()
     {
+        Debug.Log("Started the game!!!!!!!");
         state = State.SPLASH_SCREEN;
+        if (alreadyPlayed)
+        {
+            StartGame();
+        }
     }
 
     public void GameOver()
     {
         Debug.Log("GAME OVER");
         state = State.GAME_OVER;
+        UIManager.Instance.ToggleGameOverScreen(true);
+        Invoke("RestartGame", 2f);
     }
 
     public void StartGame()
     {
+        alreadyPlayed = true;
         state = State.PLAYING;
         CardManager.Instance.DrawInitialCards();
+        UIManager.Instance.ToggleSplashScreen(false);
+        UIManager.Instance.ToggleGameOverScreen(false);
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 

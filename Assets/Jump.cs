@@ -15,7 +15,6 @@ public class Jump : MonoBehaviour
 
     public void ExecuteJump()
     {
-        Debug.Log("Jump Executed!"); // TODO jump behaviour
         rb.AddForce(Vector2.up * jumpMultiplier, ForceMode2D.Impulse);
     }
 }

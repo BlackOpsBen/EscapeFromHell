@@ -14,7 +14,6 @@ public class TapManager : MonoBehaviour
 
             if (hit.collider != null && hit.transform.GetComponent<UseCard>())
             {
-                Debug.Log(hit.transform.name + " was clicked");
                 hit.transform.GetComponent<UseCard>().Use();
             }
         }
