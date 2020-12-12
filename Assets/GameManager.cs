@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public int state;
+
     private void Awake()
     {
         if (Instance != null)
@@ -20,20 +22,27 @@ public class GameManager : MonoBehaviour
 
     public float speed { get; private set; } = 2.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        state = State.SPLASH_SCREEN;
     }
 
     public void GameOver()
     {
         Debug.Log("GAME OVER");
+        state = State.GAME_OVER;
     }
+
+    public void StartGame()
+    {
+        state = State.PLAYING;
+        CardManager.Instance.DrawInitialCards();
+    }
+}
+
+public static class State
+{
+    public static int SPLASH_SCREEN = 0;
+    public static int PLAYING = 1;
+    public static int GAME_OVER = 2;
 }

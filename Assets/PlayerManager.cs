@@ -20,11 +20,18 @@ public class PlayerManager : MonoBehaviour
 
     private Jump jump;
 
+    public Invincible invincible;
+
     private void Start()
     {
         if (!(jump = FindObjectOfType<Jump>()))
         {
             jump = gameObject.AddComponent<Jump>();
+        }
+
+        if (!(invincible = FindObjectOfType<Invincible>()))
+        {
+            invincible = gameObject.AddComponent<Invincible>();
         }
     }
 

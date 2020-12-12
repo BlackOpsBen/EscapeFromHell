@@ -20,6 +20,7 @@ public class CardManager : MonoBehaviour
     }
 
     private const int HAND_SIZE = 5;
+    private int currentHandSize = 0;
 
     private int numBadCards = 0;
 
@@ -39,22 +40,12 @@ public class CardManager : MonoBehaviour
 
     void Update()
     {
-        if (cardObjects.Count < HAND_SIZE) // Handled in Update so that it covers ALL cases where a card is needed
+        if (cardObjects.Count < currentHandSize) // Handled in Update so that it covers ALL cases where a card is needed
         {
             DrawNewCard();
         }
 
         ArrangeCards();
-
-        DebugGainBadCard(); // TODO delete this
-    }
-
-    private void DebugGainBadCard() // TODO delete this
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GainBadCard();
-        }
     }
 
     private void DrawNewCard()
@@ -99,6 +90,8 @@ public class CardManager : MonoBehaviour
 
     public void GainBadCard()
     {
+        PlayerManager.Instance.invincible.BecomeInvincible();
+
         cardObjects[numBadCards].GetComponent<SpriteRenderer>().sprite = badCardSprite;
         Destroy(cardObjects[numBadCards].GetComponent<UseCard>());
         numBadCards++;
@@ -107,5 +100,10 @@ public class CardManager : MonoBehaviour
         {
             GameManager.Instance.GameOver();
         }
+    }
+
+    public void DrawInitialCards()
+    {
+        currentHandSize = HAND_SIZE;
     }
 }

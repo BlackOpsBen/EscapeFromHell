@@ -44,7 +44,10 @@ public class ScrollManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePiecesInPlay();
+        if (GameManager.Instance.state == State.GAME_OVER == false)
+        {
+            MovePiecesInPlay();
+        }
     }
 
     private void MovePiecesInPlay()
@@ -59,8 +62,19 @@ public class ScrollManager : MonoBehaviour
             piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - speed * Time.deltaTime, piecesInPlay[i].transform.position.y);
             if (piecesInPlay[i].transform.position.x < despawnXPos)
             {
-                piecesInPlay.RemoveAt(i);
-                QueueNextPiece();
+                if (GameManager.Instance.state == State.SPLASH_SCREEN)
+                {
+                    GameObject reusedPiece = piecesInPlay[i];
+                    piecesInPlay.RemoveAt(i);
+                    reusedPiece.transform.position = new Vector3(piecesInPlay[piecesInPlay.Count - 1].transform.position.x + pieceWidth, transform.position.y, 0f);
+                    piecesInPlay.Add(reusedPiece);
+
+                }
+                else
+                {
+                    piecesInPlay.RemoveAt(i);
+                    QueueNextPiece();
+                }
             }
         }
     }
