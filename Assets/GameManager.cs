@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("GAME OVER");
         state = State.GAME_OVER;
         UIManager.Instance.ToggleGameOverScreen(true);
         Invoke("RestartGame", 2f);

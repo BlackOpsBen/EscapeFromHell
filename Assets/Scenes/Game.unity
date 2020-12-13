@@ -803,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e77d39194d62849b02d23b849bf9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useAsDistanceTracker: 0
   usesCapFlags: 0
   modularPieces:
   - {fileID: 6054721360905897173, guid: 38e2cdce1113fbd4b9030bd344d33190, type: 3}
@@ -1114,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 666
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed01595a3c03fe145930f020ed44b74f, type: 2}
   m_sharedMaterial: {fileID: -7085628111384645894, guid: ed01595a3c03fe145930f020ed44b74f,
@@ -1223,6 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splashUI: {fileID: 1766061779}
   gameOverUI: {fileID: 305894530}
+  scoreUI: {fileID: 1240233525}
 --- !u!4 &971793328
 Transform:
   m_ObjectHideFlags: 0
@@ -1251,6 +1253,8 @@ GameObject:
   - component: {fileID: 1033795672}
   - component: {fileID: 1033795671}
   - component: {fileID: 1033795673}
+  - component: {fileID: 1033795674}
+  - component: {fileID: 1033795675}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1298,6 +1302,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab072140aa527d4c9acb521e9f3ab12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1033795674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033795670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a90f665a50c7e4c821f3b6c5956bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 921270744}
+--- !u!114 &1033795675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033795670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ff09ca20d823247ba1ea33fe8f9e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupTextPrefab: {fileID: 4720441949312308466, guid: f37181232b31b9a4eb315a142e15826a,
+    type: 3}
+  popupParent: {fileID: 1240233526}
 --- !u!1 &1108931491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e77d39194d62849b02d23b849bf9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useAsDistanceTracker: 0
   usesCapFlags: 0
   modularPieces:
   - {fileID: 4800467214266566193, guid: e7a38bf7160886641b950b29c49f8e5b, type: 3}
@@ -1948,6 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e77d39194d62849b02d23b849bf9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useAsDistanceTracker: 0
   usesCapFlags: 1
   modularPieces:
   - {fileID: 2963577451049883656, guid: af06684bbd303674cbd83ef5fc454939, type: 3}

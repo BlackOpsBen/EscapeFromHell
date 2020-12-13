@@ -13,8 +13,6 @@ public class Jump : MonoBehaviour
 
     private float floorTouchDist = 0.5f;
 
-    private bool isDoubleJumping = false;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +36,6 @@ public class Jump : MonoBehaviour
 
     private void PerformDoubleJump()
     {
-        isDoubleJumping = true;
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.up * jumpMultiplier, ForceMode2D.Impulse);
 
@@ -49,7 +46,6 @@ public class Jump : MonoBehaviour
     {
         if (rb.velocity.y < 0f)
         {
-            isDoubleJumping = false;
             PlayerManager.Instance.animator.SetTrigger("DoubleJumpEnd");
         }
     }

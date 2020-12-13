@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScrollManager : MonoBehaviour
 {
+    [SerializeField] bool useAsDistanceTracker;
     [SerializeField] bool usesCapFlags;
     public static int screenGridWidth = 21;
     public static int pieceWidth = 3;
@@ -56,6 +57,10 @@ public class ScrollManager : MonoBehaviour
             piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - GameManager.Instance.scrollSpeed * Time.deltaTime, piecesInPlay[i].transform.position.y);
             if (piecesInPlay[i].transform.position.x < despawnXPos)
             {
+                if (GameManager.Instance.state == State.PLAYING)
+                {
+                    GameManager.Instance.GetComponent<KeepScore>().AddDistance();
+                }
                 piecesInPlay.RemoveAt(i);
                 QueueNextPiece();
             }

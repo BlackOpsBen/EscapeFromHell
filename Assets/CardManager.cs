@@ -100,6 +100,8 @@ public class CardManager : MonoBehaviour
         {
             GameManager.Instance.GameOver();
         }
+
+        GameManager.Instance.GetComponent<KeepScore>().IncrementMultiplier();
     }
 
     public void DrawInitialCards()

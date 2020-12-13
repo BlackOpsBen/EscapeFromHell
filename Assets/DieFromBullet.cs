@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DieFromBullet : MonoBehaviour
 {
+    [SerializeField] int pointsEarned = 100;
+    [SerializeField] Transform pointsDisplayPos;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<BulletMovement>())
@@ -16,6 +18,7 @@ public class DieFromBullet : MonoBehaviour
 
     private void Die()
     {
+        GameManager.Instance.GetComponent<KeepScore>().GainPoints(pointsEarned, pointsDisplayPos.position);
         gameObject.SetActive(false);
     }
 }
