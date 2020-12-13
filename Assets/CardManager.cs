@@ -31,7 +31,7 @@ public class CardManager : MonoBehaviour
     [SerializeField] float spacing = 1f;
     [SerializeField] float speed = 1f;
 
-    [SerializeField] Sprite badCardSprite;
+    [SerializeField] Sprite[] badCardSprites;
     [SerializeField] Sprite jumpCardSprite;
     [SerializeField] Sprite shootCardSprite;
     private const int NUM_CARD_TYPES = 2; // TODO make it so I don't have to manually change this when I add a new card type.
@@ -92,7 +92,7 @@ public class CardManager : MonoBehaviour
     {
         PlayerManager.Instance.invincible.BecomeInvincible();
 
-        cardObjects[numBadCards].GetComponent<SpriteRenderer>().sprite = badCardSprite;
+        cardObjects[numBadCards].GetComponent<SpriteRenderer>().sprite = badCardSprites[numBadCards];
         Destroy(cardObjects[numBadCards].GetComponent<UseCard>());
         numBadCards++;
 
