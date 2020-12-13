@@ -748,6 +748,7 @@ GameObject:
   - component: {fileID: 4800467214266566190}
   - component: {fileID: 4800467214266566189}
   - component: {fileID: 4800467214266566188}
+  - component: {fileID: 6132899495963190317}
   m_Layer: 0
   m_Name: Ground_Default
   m_TagString: Untagged
@@ -882,6 +883,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &6132899495963190317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800467214266566193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6672618b89305b84e9ab2d41c549ea03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4800467214338098827
 GameObject:
   m_ObjectHideFlags: 0

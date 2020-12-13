@@ -6,6 +6,7 @@ using UnityEngine;
 public class ScrollManager : MonoBehaviour
 {
     [SerializeField] bool usesCapFlags;
+
     public static float speed = 6f;
     public static int screenGridWidth = 21;
     public static int pieceWidth = 3;
@@ -81,23 +82,47 @@ public class ScrollManager : MonoBehaviour
 
     private GameObject GetRandomPiece()
     {
-        List<PiecePool> validPools;
+        List<PiecePool> validPools = new List<PiecePool>();
 
         if (usesCapFlags)
         {
-            validPools = GetValidPools();            
+            validPools = GetValidCappedPools();            
         }
         else
         {
-            validPools = piecePools;
+            validPools = GetValidBackToBackPools();
         }
+
+
 
         int rand = UnityEngine.Random.Range(0, validPools.Count);
         GameObject randomPiece = validPools[rand].GetNextPiece();
         return randomPiece;
     }
 
-    private List<PiecePool> GetValidPools()
+    private List<PiecePool> GetValidBackToBackPools()
+    {
+        List<PiecePool> listToReturn = new List<PiecePool>();
+
+        if (piecesInPlay[piecesInPlay.Count - 1].GetComponent<BackToBackLimitation>().preventBackToBackPlacement)
+        {
+            for (int i = 0; i < piecePools.Count; i++)
+            {
+                if (piecePools[i].prefab.GetComponent<BackToBackLimitation>().preventBackToBackPlacement == false)
+                {
+                    listToReturn.Add(piecePools[i]);
+                }
+            }
+        }
+        else
+        {
+            listToReturn = piecePools;
+        }
+
+        return listToReturn;
+    }
+
+    private List<PiecePool> GetValidCappedPools()
     {
         List<PiecePool> listToReturn = new List<PiecePool>();
 
