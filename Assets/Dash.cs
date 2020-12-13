@@ -10,7 +10,7 @@ public class Dash : MonoBehaviour
 
     private float dashDuration = 0.25f;
 
-    private float timer = 0f;
+    private float timer = 1000f;
 
     public bool isDashing = false;
 

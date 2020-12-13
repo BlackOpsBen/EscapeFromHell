@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         alreadyPlayed = true;
         state = State.PLAYING;
-        CardManager.Instance.DrawInitialCards();
+        //CardManager.Instance.DrawInitialCards();
         UIManager.Instance.ToggleSplashScreen(false);
         UIManager.Instance.ToggleGameOverScreen(false);
         UIManager.Instance.ToggleScoreScreen(true);

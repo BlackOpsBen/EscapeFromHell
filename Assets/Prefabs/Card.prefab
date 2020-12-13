@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -8406500587925152265, guid: 02aec06a19924af46ad42cb30d19dae5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,6 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5413f6df2ef0ca14a8cb02a18d365871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSprite: {fileID: -7451217638141839459, guid: 02aec06a19924af46ad42cb30d19dae5,
+    type: 3}
+  shootSprite: {fileID: -8406500587925152265, guid: 02aec06a19924af46ad42cb30d19dae5,
+    type: 3}
+  dashSprite: {fileID: 1510373710217654424, guid: 02aec06a19924af46ad42cb30d19dae5,
+    type: 3}
 --- !u!61 &4510283169868834176
 BoxCollider2D:
   m_ObjectHideFlags: 0
