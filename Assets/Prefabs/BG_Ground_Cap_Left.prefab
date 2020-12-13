@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3013018445155064304}
   - component: {fileID: 7070165748921453449}
   - component: {fileID: 1744563989548065994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BG_Ground_Cap_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

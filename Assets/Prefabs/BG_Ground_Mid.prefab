@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2823734454189747365}
   - component: {fileID: 7845773592895749852}
   - component: {fileID: 7160353610865425136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BG_Ground_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

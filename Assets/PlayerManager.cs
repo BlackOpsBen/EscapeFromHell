@@ -24,8 +24,12 @@ public class PlayerManager : MonoBehaviour
 
     public Invincible invincible;
 
+    public Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         if (!(jump = FindObjectOfType<Jump>()))
         {
             jump = gameObject.AddComponent<Jump>();

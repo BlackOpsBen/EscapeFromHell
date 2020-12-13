@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 644394498877120867}
   - component: {fileID: 4845727393810969370}
   - component: {fileID: 6944955806389062522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BG_Ground_Cap_Both
   m_TagString: Untagged
   m_Icon: {fileID: 0}

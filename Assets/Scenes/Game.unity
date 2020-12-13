@@ -1088,6 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  scrollSpeed: 6
 --- !u!4 &1033795672
 Transform:
   m_ObjectHideFlags: 0

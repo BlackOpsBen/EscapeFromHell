@@ -4,10 +4,19 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 878276981343184991
-    second: Hero_Sprites_0
+    second: Hero_Sprites_Run_0
   - first:
       213: 1733555979904289596
-    second: Hero_Sprites_1
+    second: Hero_Sprites_Run_1
+  - first:
+      213: 1189278217788931803
+    second: Hero_Sprites_Ball_0
+  - first:
+      213: 1141410308925595946
+    second: Hero_Sprites_Ball_1
+  - first:
+      213: -5167441662015178509
+    second: Hero_Sprites_Ball_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,7 +150,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hero_Sprites_0
+      name: Hero_Sprites_Run_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58ec5fd244403c00800000000000000
+      internalID: 878276981343184991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Sprites_Run_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b037c9af3de0810800000000000000
+      internalID: 1733555979904289596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Sprites_Ball_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58ec5fd244403c00800000000000000
-      internalID: 878276981343184991
+      spriteID: bde3b6eec3a218010800000000000000
+      internalID: 1189278217788931803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero_Sprites_1
+      name: Hero_Sprites_Ball_1
       rect:
         serializedVersion: 2
         x: 16
@@ -176,8 +227,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b037c9af3de0810800000000000000
-      internalID: 1733555979904289596
+      spriteID: a21aa76e0aa17df00800000000000000
+      internalID: 1141410308925595946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Sprites_Ball_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8f70acf2f8948b0800000000000000
+      internalID: -5167441662015178509
       vertices: []
       indices: 
       edges: []
