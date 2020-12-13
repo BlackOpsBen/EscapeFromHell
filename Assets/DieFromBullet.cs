@@ -8,11 +8,15 @@ public class DieFromBullet : MonoBehaviour
     [SerializeField] Transform pointsDisplayPos;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<BulletMovement>())
+        if (collision.gameObject.GetComponent<KillsEnemiesOnTouch>() != null)
         {
             Die();
-            collision.gameObject.transform.position = new Vector2(100f, 100f);
-            collision.gameObject.SetActive(false);
+            
+            if (collision.gameObject.GetComponent<BulletMovement>() != null)
+            {
+                collision.gameObject.transform.position = new Vector2(100f, 100f);
+                collision.gameObject.SetActive(false);
+            }
         }
     }
 
