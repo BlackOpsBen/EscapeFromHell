@@ -25,6 +25,8 @@ public class FloatingTextManager : MonoBehaviour
     {
         Vector2 screenPos = Camera.main.WorldToScreenPoint(location);
         GameObject newPopup = Instantiate(popupTextPrefab, screenPos, Quaternion.identity, popupParent);
-        newPopup.GetComponent<FloatingText>().SetText(text);
+        FloatingText fl = newPopup.GetComponent<FloatingText>();
+        fl.childForPositioning.transform.position = screenPos;
+        fl.SetText(text);
     }
 }

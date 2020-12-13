@@ -17,13 +17,10 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            alreadyPlayed = Instance.alreadyPlayed;
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
         }
         
         Instance = this;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()

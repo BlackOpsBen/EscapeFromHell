@@ -6,6 +6,7 @@ using TMPro;
 public class FloatingText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI popupText;
+    [SerializeField] public GameObject childForPositioning;
 
     public void SetText(string text)
     {
