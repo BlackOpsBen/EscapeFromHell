@@ -20,6 +20,8 @@ public class PlayerManager : MonoBehaviour
 
     private Jump jump;
 
+    private Shoot shoot;
+
     public Invincible invincible;
 
     private void Start()
@@ -27,6 +29,11 @@ public class PlayerManager : MonoBehaviour
         if (!(jump = FindObjectOfType<Jump>()))
         {
             jump = gameObject.AddComponent<Jump>();
+        }
+
+        if (!(shoot = FindObjectOfType<Shoot>()))
+        {
+            shoot = gameObject.AddComponent<Shoot>();
         }
 
         if (!(invincible = FindObjectOfType<Invincible>()))
@@ -38,5 +45,10 @@ public class PlayerManager : MonoBehaviour
     public void Jump()
     {
         jump.ExecuteJump();
+    }
+
+    public void Shoot()
+    {
+        shoot.ExecuteShoot();
     }
 }

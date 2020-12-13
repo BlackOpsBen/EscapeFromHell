@@ -6,6 +6,6 @@ public class ShootCardFunction : MonoBehaviour, ICardFunction
 {
     public void UseCardFunction()
     {
-        Debug.Log("Shoot function triggered!");
+        PlayerManager.Instance.Shoot();
     }
 }

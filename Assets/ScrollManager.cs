@@ -52,36 +52,28 @@ public class ScrollManager : MonoBehaviour
 
     private void MovePiecesInPlay()
     {
-        /*foreach (GameObject pieceInPlay in piecesInPlay) // TODO delete if not needed
-        {
-            pieceInPlay.transform.position = new Vector2(pieceInPlay.transform.position.x - speed * Time.deltaTime, pieceInPlay.transform.position.y);
-        }*/
-
         for (int i = 0; i < piecesInPlay.Count; i++)
         {
             piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - speed * Time.deltaTime, piecesInPlay[i].transform.position.y);
             if (piecesInPlay[i].transform.position.x < despawnXPos)
             {
-                if (GameManager.Instance.state == State.SPLASH_SCREEN)
-                {
-                    GameObject reusedPiece = piecesInPlay[i];
-                    piecesInPlay.RemoveAt(i);
-                    reusedPiece.transform.position = new Vector3(piecesInPlay[piecesInPlay.Count - 1].transform.position.x + pieceWidth, transform.position.y, 0f);
-                    piecesInPlay.Add(reusedPiece);
-
-                }
-                else
-                {
-                    piecesInPlay.RemoveAt(i);
-                    QueueNextPiece();
-                }
+                piecesInPlay.RemoveAt(i);
+                QueueNextPiece();
             }
         }
     }
 
     private void QueueNextPiece()
     {
-        GameObject nextPiece = GetRandomPiece();
+        GameObject nextPiece;
+        if (GameManager.Instance.state == State.SPLASH_SCREEN)
+        {
+            nextPiece = piecePools[0].GetNextPiece();
+        }
+        else
+        {
+            nextPiece = GetRandomPiece();
+        }
         nextPiece.transform.position = new Vector3(piecesInPlay[piecesInPlay.Count - 1].transform.position.x + pieceWidth, transform.position.y, 0f);
         nextPiece.transform.parent = transform;
         piecesInPlay.Add(nextPiece);

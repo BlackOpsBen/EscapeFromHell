@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Started the game!!!!!!!");
         state = State.SPLASH_SCREEN;
         if (alreadyPlayed)
         {

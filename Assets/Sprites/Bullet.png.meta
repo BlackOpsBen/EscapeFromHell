@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 02aec06a19924af46ad42cb30d19dae5
+guid: ee9d7c18a98a30e4b98e3a12b06dbbe4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8406500587925152265
-    second: Card_Sprites_0
+      213: 2208703988740019828
+    second: Bullet_0
   - first:
-      213: -7451217638141839459
-    second: Card_Sprites_1
+      213: 4385501425044414559
+    second: Bullet_1
   - first:
-      213: 8253311139516954541
-    second: Card_Sprites_2
+      213: 3029603797402824116
+    second: Bullet_2
+  - first:
+      213: -3300396339194205850
+    second: Bullet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -144,55 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Card_Sprites_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fddb9c314c165b80800000000000000
-      internalID: -8406500587925152265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Card_Sprites_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d973e6e4905f79890800000000000000
-      internalID: -7451217638141839459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Card_Sprites_2
+      name: Bullet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +161,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da7bea3e0c6a98270800000000000000
-      internalID: 8253311139516954541
+      spriteID: 47656d65394e6ae10800000000000000
+      internalID: 2208703988740019828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50edb98f4e6cdc30800000000000000
+      internalID: 4385501425044414559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdae5a2a905b0a20800000000000000
+      internalID: 3029603797402824116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66964580403a232d0800000000000000
+      internalID: -3300396339194205850
       vertices: []
       indices: 
       edges: []

@@ -71,7 +71,7 @@ public class CardManager : MonoBehaviour
             default:
                 break;
         }
-        drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<JumpCardFunction>());
+        //drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<JumpCardFunction>());
     }
 
     private void ArrangeCards()
