@@ -22,6 +22,8 @@ public class PlayerManager : MonoBehaviour
 
     private Shoot shoot;
 
+    private Dash dash;
+
     public Invincible invincible;
 
     public Animator animator;
@@ -44,6 +46,11 @@ public class PlayerManager : MonoBehaviour
         {
             invincible = gameObject.AddComponent<Invincible>();
         }
+
+        if (!(dash = FindObjectOfType<Dash>()))
+        {
+            dash = gameObject.AddComponent<Dash>();
+        }
     }
 
     public void Jump()
@@ -54,5 +61,10 @@ public class PlayerManager : MonoBehaviour
     public void Shoot()
     {
         shoot.ExecuteShoot();
+    }
+
+    public void Dash()
+    {
+        dash.ExecuteDash();
     }
 }

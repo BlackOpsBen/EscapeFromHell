@@ -54,7 +54,7 @@ public class ScrollManager : MonoBehaviour
     {
         for (int i = 0; i < piecesInPlay.Count; i++)
         {
-            piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - GameManager.Instance.scrollSpeed * Time.deltaTime, piecesInPlay[i].transform.position.y);
+            piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - GameManager.Instance.GetScrollSpeed() * Time.deltaTime, piecesInPlay[i].transform.position.y);
             if (piecesInPlay[i].transform.position.x < despawnXPos)
             {
                 if (GameManager.Instance.state == State.PLAYING)

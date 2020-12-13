@@ -34,7 +34,8 @@ public class CardManager : MonoBehaviour
     [SerializeField] Sprite[] badCardSprites;
     [SerializeField] Sprite jumpCardSprite;
     [SerializeField] Sprite shootCardSprite;
-    private const int NUM_CARD_TYPES = 2; // TODO make it so I don't have to manually change this when I add a new card type.
+    [SerializeField] Sprite dashCardSprite;
+    private const int NUM_CARD_TYPES = 3; // TODO make it so I don't have to manually change this when I add a new card type.
 
     List<GameObject> cardObjects =  new List<GameObject>();
 
@@ -68,10 +69,15 @@ public class CardManager : MonoBehaviour
                 drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<ShootCardFunction>());
                 drawnCard.GetComponent<SpriteRenderer>().sprite = shootCardSprite;
                 break;
+            case 2:
+                drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<DashCardFunction>());
+                drawnCard.GetComponent<SpriteRenderer>().sprite = dashCardSprite;
+                break;
             default:
+                drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<JumpCardFunction>());
+                drawnCard.GetComponent<SpriteRenderer>().sprite = jumpCardSprite;
                 break;
         }
-        //drawnCard.GetComponent<UseCard>().SetCardType(drawnCard.AddComponent<JumpCardFunction>());
     }
 
     private void ArrangeCards()

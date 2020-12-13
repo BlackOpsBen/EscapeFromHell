@@ -65,7 +65,7 @@ public class Spawner : MonoBehaviour
         List<int> planToRemoveAt = new List<int>();
         for (int i = 0; i < inPlay.Count; i++)
         {
-            inPlay[i].transform.position = new Vector2(inPlay[i].transform.position.x - GameManager.Instance.scrollSpeed * Time.deltaTime, inPlay[i].transform.position.y);
+            inPlay[i].transform.position = new Vector2(inPlay[i].transform.position.x - GameManager.Instance.GetScrollSpeed() * Time.deltaTime, inPlay[i].transform.position.y);
             if (inPlay[i].transform.position.x < despawnXPos)
             {
                 planToRemoveAt.Add(i);

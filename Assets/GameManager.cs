@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     private bool alreadyPlayed = false;
 
-    public float scrollSpeed = 6f;
+    private float defaultScrollSpeed = 6f;
+    private float scrollSpeed = 6f;
 
     private void Awake()
     {
@@ -52,6 +53,21 @@ public class GameManager : MonoBehaviour
     private void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public float GetScrollSpeed()
+    {
+        return scrollSpeed;
+    }
+
+    public void SetScrollSpeed(float speed)
+    {
+        scrollSpeed = speed;
+    }
+
+    public void ResetScrollSpeed()
+    {
+        scrollSpeed = defaultScrollSpeed;
     }
 }
 
