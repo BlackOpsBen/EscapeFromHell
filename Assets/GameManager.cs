@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private bool alreadyPlayed = false;
 
+    public float scrollSpeed = 6f;
+
     private void Awake()
     {
         if (Instance != null)
@@ -23,8 +25,6 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
-    public float speed { get; private set; } = 2.0f;
 
     void Start()
     {

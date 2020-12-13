@@ -32,6 +32,7 @@ public class Shoot : MonoBehaviour
         {
             index++;
             index = index % MAX_BULLETS;
+            projectiles[index].SetActive(true);
             return projectiles[index];
         }
     }

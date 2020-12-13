@@ -6,8 +6,6 @@ using UnityEngine;
 public class ScrollManager : MonoBehaviour
 {
     [SerializeField] bool usesCapFlags;
-
-    public static float speed = 6f;
     public static int screenGridWidth = 21;
     public static int pieceWidth = 3;
     private int numStartingPieces = 7;
@@ -55,7 +53,7 @@ public class ScrollManager : MonoBehaviour
     {
         for (int i = 0; i < piecesInPlay.Count; i++)
         {
-            piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - speed * Time.deltaTime, piecesInPlay[i].transform.position.y);
+            piecesInPlay[i].transform.position = new Vector2(piecesInPlay[i].transform.position.x - GameManager.Instance.scrollSpeed * Time.deltaTime, piecesInPlay[i].transform.position.y);
             if (piecesInPlay[i].transform.position.x < despawnXPos)
             {
                 piecesInPlay.RemoveAt(i);
