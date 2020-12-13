@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject splashUI;
     [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject scoreUI;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        ToggleScoreScreen(false);
         ToggleGameOverScreen(false);
     }
 
@@ -34,5 +36,10 @@ public class UIManager : MonoBehaviour
     public void ToggleGameOverScreen(bool show)
     {
         gameOverUI.SetActive(show);
+    }
+
+    public void ToggleScoreScreen(bool show)
+    {
+        scoreUI.SetActive(show);
     }
 }

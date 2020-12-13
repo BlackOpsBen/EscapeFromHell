@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         CardManager.Instance.DrawInitialCards();
         UIManager.Instance.ToggleSplashScreen(false);
         UIManager.Instance.ToggleGameOverScreen(false);
+        UIManager.Instance.ToggleScoreScreen(true);
     }
 
     private void RestartGame()

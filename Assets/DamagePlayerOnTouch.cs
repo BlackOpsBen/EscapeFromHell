@@ -14,4 +14,15 @@ public class DamagePlayerOnTouch : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerManager>())
+        {
+            if (PlayerManager.Instance.invincible.GetIsInvincible() == false)
+            {
+                CardManager.Instance.GainBadCard();
+            }
+        }
+    }
 }
