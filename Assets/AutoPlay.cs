@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoPlay : MonoBehaviour
 {
-    public bool enabled = false;
+    public bool isEnabled = false;
 
     private void Start()
     {

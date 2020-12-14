@@ -8,8 +8,9 @@ public class FloatingText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI popupText;
     [SerializeField] public GameObject childForPositioning;
 
-    public void SetText(string text)
+    public void SetText(string text, Color color)
     {
         popupText.SetText(text);
+        popupText.color = color;
     }
 }

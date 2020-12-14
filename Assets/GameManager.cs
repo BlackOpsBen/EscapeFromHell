@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         AudioManager.Instance.PlaySound("Music");
         state = State.SPLASH_SCREEN;
-        if (autoPlay.enabled)
+        if (autoPlay.isEnabled)
         {
             StartGame();
         }
@@ -38,16 +38,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        GetComponent<SaveAndLoadScores>().SaveBests();
         AudioManager.Instance.StopAllSounds();
         AudioManager.Instance.PlaySound("GameOver");
         state = State.GAME_OVER;
         UIManager.Instance.ToggleGameOverScreen(true);
-        Invoke("RestartGame", 2f);
+        Invoke("RestartGame", 3f);
     }
 
     public void StartGame()
     {
-        autoPlay.enabled = true;
+        autoPlay.isEnabled = true;
         state = State.PLAYING;
         //CardManager.Instance.DrawInitialCards();
         UIManager.Instance.ToggleSplashScreen(false);

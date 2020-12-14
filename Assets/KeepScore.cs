@@ -13,12 +13,13 @@ public class KeepScore : MonoBehaviour
     private int totalScore = 0;
     private int multiplier = 1;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI distText;
 
     public void GainPoints(int points, Vector2 location)
     {
         int multipliedPoints = points * multiplier;
         scoreFromBonuses += multipliedPoints;
-        FloatingTextManager.Instance.CreateFloatingText(multipliedPoints.ToString(), location);
+        FloatingTextManager.Instance.CreateFloatingText(multipliedPoints.ToString(), multiplier -1, location);
         UpdateScoreText();
     }
 
@@ -32,7 +33,8 @@ public class KeepScore : MonoBehaviour
     private void UpdateScoreText()
     {
         totalScore = scoreFromDistance + scoreFromBonuses;
-        scoreText.SetText(totalScore.ToString());
+        scoreText.SetText(totalScore.ToString() + "pts");
+        distText.SetText(totalDistance.ToString() + "m");
     }
 
     public void AddDistance()
@@ -49,5 +51,15 @@ public class KeepScore : MonoBehaviour
     public void IncrementMultiplier()
     {
         multiplier++;
+    }
+
+    public int GetScore()
+    {
+        return totalScore;
+    }
+
+    public int GetDist()
+    {
+        return totalDistance;
     }
 }
