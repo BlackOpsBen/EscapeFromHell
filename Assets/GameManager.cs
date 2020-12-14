@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
 
     public int state;
 
-    private bool alreadyPlayed = false;
-
     private float defaultScrollSpeed = 6f;
     private float scrollSpeed = 6f;
+
+    private AutoPlay autoPlay;
 
     private void Awake()
     {
@@ -26,9 +26,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        autoPlay = FindObjectOfType<AutoPlay>();
+
         AudioManager.Instance.PlaySound("Music");
         state = State.SPLASH_SCREEN;
-        if (alreadyPlayed)
+        if (autoPlay.enabled)
         {
             StartGame();
         }
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        alreadyPlayed = true;
+        autoPlay.enabled = true;
         state = State.PLAYING;
         //CardManager.Instance.DrawInitialCards();
         UIManager.Instance.ToggleSplashScreen(false);
