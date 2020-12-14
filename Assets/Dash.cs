@@ -28,11 +28,14 @@ public class Dash : MonoBehaviour
 
     public void ExecuteDash()
     {
-        AudioManager.Instance.PlaySound("Dash");
-        dashEffect.SetActive(true);
-        PlayerManager.Instance.animator.SetTrigger("Dash");
-        isDashing = true;
-        timer = 0f;
-        GameManager.Instance.SetScrollSpeed(GameManager.Instance.GetScrollSpeed() * dashSpeedMultiplier);
+        if (!isDashing)
+        {
+            AudioManager.Instance.PlaySound("Dash");
+            dashEffect.SetActive(true);
+            PlayerManager.Instance.animator.SetTrigger("Dash");
+            isDashing = true;
+            timer = 0f;
+            GameManager.Instance.SetScrollSpeed(GameManager.Instance.GetScrollSpeed() * dashSpeedMultiplier);
+        }
     }
 }

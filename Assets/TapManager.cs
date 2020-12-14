@@ -7,18 +7,18 @@ public class TapManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (hit.collider != null && hit.transform.GetComponent<UseCard>())
-            {
-                hit.transform.GetComponent<UseCard>().Use();
-            }
-        }
+        //    if (hit.collider != null && hit.transform.GetComponent<UseCard>())
+        //    {
+        //        hit.transform.GetComponent<UseCard>().Use();
+        //    }
+        //}
 
-        /*if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
@@ -27,14 +27,13 @@ public class TapManager : MonoBehaviour
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
                     RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
 
-                    if (hit.collider != null)
+                    if (hit.collider != null && hit.transform.GetComponent<UseCard>())
                     {
-                        Debug.Log("Touch " + i + " on " + hit.transform.name);
-                        CardManager.Instance.GainBadCard();
+                        hit.transform.GetComponent<UseCard>().Use();
                     }
                 }
             }
-        }*/
+        }
     }
         
 }
