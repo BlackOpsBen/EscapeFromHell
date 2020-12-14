@@ -22,6 +22,7 @@ public class DieFromBullet : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.Instance.PlaySound("Death");
         GameManager.Instance.GetComponent<KeepScore>().GainPoints(pointsEarned, pointsDisplayPos.position);
         gameObject.SetActive(false);
     }

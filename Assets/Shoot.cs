@@ -16,6 +16,7 @@ public class Shoot : MonoBehaviour
 
     public void ExecuteShoot()
     {
+        AudioManager.Instance.PlaySound("Shoot");
         GetNextBullet().transform.position = muzzle.position;
     }
 

@@ -28,6 +28,7 @@ public class Dash : MonoBehaviour
 
     public void ExecuteDash()
     {
+        AudioManager.Instance.PlaySound("Dash");
         dashEffect.SetActive(true);
         PlayerManager.Instance.animator.SetTrigger("Dash");
         isDashing = true;

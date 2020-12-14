@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.PlaySound("Music");
         state = State.SPLASH_SCREEN;
         if (alreadyPlayed)
         {
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        AudioManager.Instance.StopAllSounds();
+        AudioManager.Instance.PlaySound("GameOver");
         state = State.GAME_OVER;
         UIManager.Instance.ToggleGameOverScreen(true);
         Invoke("RestartGame", 2f);

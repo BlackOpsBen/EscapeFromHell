@@ -27,6 +27,7 @@ public class CardManager : MonoBehaviour
 
     public void GainBadCard()
     {
+        AudioManager.Instance.PlaySound("Hit");
         PlayerManager.Instance.invincible.BecomeInvincible();
 
         cardObjects[numBadCards].GetComponent<UseCard>().BecomeBadCard(badCardSprites[numBadCards]);

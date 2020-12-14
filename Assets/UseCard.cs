@@ -47,9 +47,6 @@ public class UseCard : MonoBehaviour
             cardType.UseCardFunction();
             ResetCard();
         }
-
-        //CardManager.Instance.RemoveCard(gameObject);
-        //Destroy(gameObject);
     }
 
     private void ResetCard()

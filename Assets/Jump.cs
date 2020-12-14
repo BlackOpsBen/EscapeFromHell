@@ -20,6 +20,8 @@ public class Jump : MonoBehaviour
 
     public void ExecuteJump()
     {
+        AudioManager.Instance.PlaySound("Jump");
+
         int layerMask = 1 << LayerMask.NameToLayer("Floor");
         RaycastHit2D hit = Physics2D.Raycast(raySource.position, Vector2.down, floorTouchDist, layerMask);
         
