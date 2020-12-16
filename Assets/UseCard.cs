@@ -19,6 +19,8 @@ public class UseCard : MonoBehaviour
     private float outPosDist = 6f;
     private float speed = 6f;
 
+    private bool isUsed = false;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -42,8 +44,9 @@ public class UseCard : MonoBehaviour
 
     public void Use()
     {
-        if (cardType != null)
+        if (cardType != null && isUsed == false)
         {
+            isUsed = true;
             cardType.UseCardFunction();
             ResetCard();
         }
@@ -53,6 +56,7 @@ public class UseCard : MonoBehaviour
     {
         transform.position = outPos;
         DetermineNextCardType();
+        isUsed = false;
     }
 
     private void DetermineNextCardType()
